@@ -1,0 +1,27 @@
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+import seaborn as sns
+from matplotlib import gridspec
+
+data = pd.read_csv("creditcard.csv")
+print(data.head())
+
+print(data.describe())
+
+fraud = data[data['Class'] == 1]
+valid = data[data['Class'] == 0]
+outlierFraction = len(fraud)/float(len(valid))
+print(outlierFraction)
+print('Fraud Cases: {}'.format(len(data[data['Class'] == 1])))
+print('Valid Transactions: {}'.format(len(data[data['Class'] == 0])))
+
+print("Amount details of the fraudulent transaction")
+fraud.Amount.describe()
+
+print("details of valid transaction")
+valid.Amount.describe()
+
+plt.figure(figsize=(15, 10))
+sns.distplot(fraud.Amount)
+sns.distplot(valid.Amount)

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>AI Fitness Trainer</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="container">
+    <h1>
+      <span>🏋️ AI Fitness Trainer</span>
+      <button class="theme-toggle" id="theme-toggle" title="Toggle Dark Mode">🌙</button>
+    </h1>
+    <div class="status-indicator" id="status">● LIVE</div>
+
+    <div class="video-section">
+      <img id="video-stream" src="http://localhost:5000/video_feed" alt="Video Stream">
+    </div>
+
+    <div class="stats">
+      <div class="stat-box">
+        <span class="label">Reps</span>
+        <span id="rep-count" class="value">0</span>
+      </div>
+      <div class="stat-box">
+        <span class="label">State</span>
+        <span id="state" class="value">REST</span>
+      </div>
+      <div class="stat-box">
+        <span class="label">Angle</span>
+        <span id="angle" class="value">---</span>
+      </div>
+      <div class="stat-box">
+        <span class="label">Symmetry</span>
+        <span id="symmetry" class="value">---</span>
+      </div>
+      <div class="stat-box">
+        <span class="label">ROM</span>
+        <span id="rom" class="value">---</span>
+      </div>
+      <div class="stat-box">
+        <span class="label">Torso</span>
+        <span id="torso-stability" class="value">GOOD</span>
+      </div>
+    </div>
+
+    <div class="actions">
+      <button id="reset-btn" class="secondary">Reset Counter</button>
+      <button id="end-session">End Session & Save</button>
+      <button onclick="window.location.href='dashboard.html'">View Dashboard</button>
+    </div>
+
+  </div>
+
+<script src="script.js"></script>
+</body>
+</html>
