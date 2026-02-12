@@ -27,7 +27,7 @@ This project demonstrates a complete ML pipeline, from dataset acquisition to de
 
 1. **Clone the repository:**
    ```bash
-   git clone https://github.com/YOUR_USERNAME/fingerprint-blood-group-detection.git
+   git clone https://github.com/ShreyashN16/fingerprint-blood-group-detection.git
    cd fingerprint-blood-group-detection
    ```
 
