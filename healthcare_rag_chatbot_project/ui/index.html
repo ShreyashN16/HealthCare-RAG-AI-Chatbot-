@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Healthcare AI Assistant powered by RAG – Ask medical questions and get instant, reliable answers."/>
+  <title>MediChat AI – Healthcare Assistant</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Ambient background blobs -->
+  <div class="ambient-bg">
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="blob blob-3"></div>
+  </div>
+
+  <div class="app-shell">
+
+    <!-- ── SIDEBAR ── -->
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-header">
+        <div class="logo">
+          <div class="logo-icon">✚</div>
+          <span class="logo-text">MediChat <span class="logo-ai">AI</span></span>
+        </div>
+        <button class="sidebar-toggle" id="sidebarToggle" title="Close sidebar">‹</button>
+      </div>
+
+      <div class="sidebar-section">
+        <p class="sidebar-label">Suggested Questions</p>
+        <ul class="suggestions" id="suggestions">
+          <li class="suggestion-item" data-q="What are the symptoms of diabetes?">💊 Symptoms of diabetes?</li>
+          <li class="suggestion-item" data-q="How to lower blood pressure naturally?">❤️ Lower blood pressure naturally?</li>
+          <li class="suggestion-item" data-q="What causes migraines?">🧠 What causes migraines?</li>
+          <li class="suggestion-item" data-q="What are common signs of a heart attack?">🫀 Signs of a heart attack?</li>
+          <li class="suggestion-item" data-q="How to improve immune system?">🛡️ Improve immune system?</li>
+          <li class="suggestion-item" data-q="What is the difference between flu and cold?">🤧 Flu vs. Common Cold?</li>
+        </ul>
+      </div>
+
+      <div class="sidebar-section sidebar-footer">
+        <div class="disclaimer-box">
+          <span class="disclaimer-icon">⚠️</span>
+          <p>This AI provides general information only and is not a substitute for professional medical advice.</p>
+        </div>
+      </div>
+    </aside>
+
+    <!-- ── MAIN CHAT AREA ── -->
+    <main class="chat-main" id="chatMain">
+
+      <!-- Top Bar -->
+      <header class="chat-header">
+        <button class="menu-btn" id="menuBtn" title="Toggle sidebar">☰</button>
+        <div class="header-info">
+          <div class="status-dot"></div>
+          <span class="header-title">Healthcare AI Assistant</span>
+        </div>
+        <button class="clear-btn" id="clearBtn" title="Clear chat">🗑 Clear</button>
+      </header>
+
+      <!-- Messages -->
+      <div class="messages-wrapper" id="messagesWrapper">
+
+        <!-- Welcome card -->
+        <div class="welcome-card" id="welcomeCard">
+          <div class="welcome-icon">🏥</div>
+          <h1 class="welcome-title">MediChat AI</h1>
+          <p class="welcome-sub">Your intelligent healthcare companion. Ask me anything about symptoms, treatments, medications, or general wellness.</p>
+          <div class="welcome-chips">
+            <span class="chip" data-q="What are the symptoms of diabetes?">Diabetes symptoms</span>
+            <span class="chip" data-q="How to lower blood pressure naturally?">Blood pressure tips</span>
+            <span class="chip" data-q="What causes migraines?">Migraine causes</span>
+          </div>
+        </div>
+
+        <!-- Chat messages go here -->
+        <div class="messages" id="messages"></div>
+
+      </div>
+
+      <!-- Input Area -->
+      <div class="input-area">
+        <div class="input-box">
+          <textarea
+            id="question"
+            placeholder="Ask a medical question…"
+            rows="1"
+            autocomplete="off"
+            spellcheck="false"
+          ></textarea>
+          <button class="send-btn" id="sendBtn" title="Send" onclick="ask()">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="22" y1="2" x2="11" y2="13"></line>
+              <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+            </svg>
+          </button>
+        </div>
+        <p class="input-hint">MediChat AI may make mistakes. Always consult a licensed physician.</p>
+      </div>
+
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
